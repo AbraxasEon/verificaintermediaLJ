@@ -11,24 +11,59 @@ import java.util.ArrayList;
  *
  * @author indra
  */
-public class Garage extends Veicolo {
+public class Garage {
 
-    static ArrayList<Veicolo> veicoli = new ArrayList<Veicolo>();
+    private ArrayList<Veicolo> veicoli = new ArrayList<Veicolo>(15);
 
-    public static ArrayList<Veicolo> getVeicoli() {
-        return veicoli;
-    }
+    private final int posti;
 
-    public static void setVeicoli(ArrayList<Veicolo> veicoli) {
-        Garage.veicoli = veicoli;
-    }
-
-    public void entrata(int index, Veicolo element) {
-        veicoli.add(index, element);
-    }
-
-    public Veicolo uscita(int index) {
-        return veicoli.remove(index);
+    public Garage(int posti) {
+        this.posti = posti;
     }
     
+      public int getPosti() {
+        return posti;
+    }
+
+    public void entrata(Veicolo v) {
+        if (postoLibero() == -1) {
+            throw new GarageException("Il garage è pieno");
+        }
+        veicoli.set(postoLibero(), v);
+    }
+
+    public Veicolo uscita(int posto) {
+        if (posto >= this.posti || veicoli.get(posto) == null) {
+            throw new GarageException("Il posto non esiste oppure è vuoto");
+        }
+        Veicolo v = veicoli.get(posto);
+        veicoli.set(posto, null);
+        return v;
+    }
+
+    public void situazione() {
+        for (int posto = 0; posto < veicoli.size(); posto++) {
+            if (veicoli.get(posto) != null) {
+                System.out.println("--------------- POSTO " + posto + " ---------------");
+                System.out.println(veicoli.get(posto));
+                System.out.println("-------------------------");
+                System.out.println();
+            }
+
+        }
+    }
+
+    public boolean isLibero() {
+        return postoLibero() != -1;
+    }
+
+    private void inizializza() {
+        for (int i = 0; i < this.posti; i++) {
+            veicoli.add(null);
+        }
+    }
+
+    private int postoLibero() {
+        return veicoli.indexOf(null);
+    }
 }

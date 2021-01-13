@@ -11,8 +11,8 @@ package Esercizio_1;
  */
 public class Furgone extends Veicolo {
 
-    private int capacita;
-    
+ private final int capacita;
+
     public Furgone(int anno, int cilindrata, String marca, int capacita) {
         super(anno, cilindrata, marca);
         this.capacita = capacita;
@@ -24,7 +24,7 @@ public class Furgone extends Veicolo {
 
     @Override
     public String toString() {
-        return super.toString("Marca; " + getMarca() + " | Anno: " + getAnno() + " | Cilindrata: " + getCilindrata() + " | Capacita: " + getCapacita()); //To change body of generated methods, choose Tools | Templates.
+        return super.toString() + "\nFurgone > Capacita: " + getCapacita() + "\n"; //To change body of generated methods, choose Tools | Templates.
     }
     
 }
