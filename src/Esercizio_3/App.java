@@ -5,17 +5,32 @@
  */
 package Esercizio_3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author indra
  */
 public class App {
 
+    static ArrayList<Apparecchi> listaApparecchi = new ArrayList<Apparecchi>();
+    static ArrayList<Riparazioni> listaRiparazioni = new ArrayList<Riparazioni>();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Officina.immissioneDecespugliatore("Hyundai", 100, true);
+
+        Officina.stampa();
+
+        Riparazioni riparazione = new Riparazioni("Cambio olio", 30);
+        listaRiparazioni.add(riparazione);
+        riparazione = new Riparazioni("Cambio lamine", 10);
+        listaRiparazioni.add(riparazione);
+        riparazione = new Riparazioni("Manodopera", 20);
+        listaRiparazioni.add(riparazione);
+
     }
-    
 }
