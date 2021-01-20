@@ -18,9 +18,9 @@ public class App {
         // TODO code application logic here
 
         Sim newSim = new Sim("3483006561", 65);
-        Sim.chiama("3483006562", 8);
-        Sim.chiama("3483006563", 16);
-        Sim.chiama("3483006564", 12);
+        Sim.chiama(8, "3483006562");
+        Sim.chiama(16, "3483006563");
+        Sim.chiama(12, "3483006564");
         System.err.println("\nMinuti chiamata: " + Sim.calcoloMinuti());
         System.err.println("Chiamate effettuate: " + Sim.totaleChiamate("3483006565"));
         Sim.stampa(0);

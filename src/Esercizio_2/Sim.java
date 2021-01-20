@@ -13,20 +13,20 @@ import java.util.ArrayList;
  */
 public class Sim {
     
-    private final String numero;
+    private static String numero;
     private float credito;
-    private ArrayList<Chiamata> listaChiamate = new ArrayList<Chiamata>();
+    private static ArrayList<Chiamata> listaChiamate = new ArrayList<Chiamata>();
 
-     public Sim(String numero, float credito) {
+     public Sim(String numero, float credito) {       
          
         this.numero = numero;
-        this.credito = credito;
+        this.credito = credito;        
         
     }
 
-    static void chiama(String numeroChiamato, int durata) {
+    static void chiama(int durata, String numeroChiamato) {
         
-        Chiamata chiamata = new Chiamata(numeroChiamato, durata);
+        Chiamata chiamata = new Chiamata(durata, numeroChiamato);
         listaChiamate.add(chiamata);
         
     }
@@ -55,7 +55,7 @@ public class Sim {
     static void stampa(int i) {
         
         String tx = "";
-        tx += "Numero: " + numero + "\n-----------------\nELENCO CHIAMATE";
+        tx += "Numero: " + numero + "\nCHIAMATE EFFETTUATE";
         
         for (Chiamata c : listaChiamate) {
             
