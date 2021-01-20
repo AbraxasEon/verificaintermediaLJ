@@ -21,7 +21,7 @@ public class App {
      */
     public static void main(String[] args) {
 
-        Officina.immissioneDecespugliatore("Hyundai", 100, true);
+        Officina.acquisizioneDecespugliatore("Hyundai", 100, true);
 
         Officina.stampa();
 

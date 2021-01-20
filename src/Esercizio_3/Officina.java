@@ -11,7 +11,7 @@ package Esercizio_3;
  */
 public class Officina {
     
-     static void immissioneDecespugliatore(String marca, float costoRiparazione, boolean accensioneElettronica) {
+     static void acquisizioneDecespugliatore(String marca, float costoRiparazione, boolean accensioneElettronica) {
          
         if (App.listaApparecchi.size() < 10) {
             Decespugliatori decespugliatore = new Decespugliatori(marca, costoRiparazione, accensioneElettronica);
@@ -22,7 +22,7 @@ public class Officina {
         
     }
 
-    static void immissioneMotozappa(String marca, float costoRiparazione, int numeroRuote) {
+    static void acquisizioneMotozappa(String marca, float costoRiparazione, int numeroRuote) {
         
         if (App.listaApparecchi.size() < 10) {
             Motozappe Motozappa = new Motozappe(marca, costoRiparazione, numeroRuote);
@@ -33,7 +33,7 @@ public class Officina {
         
     }
 
-    static void immissioneTosaerba(String marca, float costoRiparazione, int numeroRuote) {
+    static void acquisizioneTosaerba(String marca, float costoRiparazione, int numeroRuote) {
         
         if (App.listaApparecchi.size() < 10) {
             Tosaerba Tosaerba = new Tosaerba(marca, costoRiparazione, numeroRuote);
